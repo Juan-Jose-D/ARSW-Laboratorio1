@@ -9,12 +9,24 @@ package edu.eci.arsw.threads;
  *
  * @author hcadavid
  */
-public class CountThread extends Thread{
-    public CountThread(int inicio, int fin) {
-        for (int i = inicio; i <= fin; i++) {
-            System.out.println(i);
-        }
-    }
-
-    //Falta metodo run porque así como está no funciona bien
+public class CountThread extends Thread
+    Thread t;
+	int inicio;
+	int fin;
+	
+	public CountThread(int A, int B) {
+		inicio = A;
+		fin = B;
+		t = new Thread(this, "nuevo hilo");
+		t.start();
+        
+    @Override
+	public void run() {
+		long starttime = System.nanoTime();
+		for (int contador = inicio;contador<=fin;contador++) {
+			System.out.println("num: "+contador);
+		}
+		long endtime = System.nanoTime();
+		System.out.println("tiempo: "+(starttime-endtime));     
+	}	
 }
