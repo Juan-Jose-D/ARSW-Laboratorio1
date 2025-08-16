@@ -18,7 +18,6 @@ public class CountThread extends Thread{
 		inicio = A;
 		fin = B;
 		t = new Thread(this, "nuevo hilo");
-		t.start();
 	}
 
     @Override
