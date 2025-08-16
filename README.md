@@ -13,7 +13,7 @@ En la clase CountThread extendemos la clase Thread para que funcione como un hil
 Y en la clase CountThreadMain creamos los hilos con los rangos del ejercicio y ejecutamos los hilos con start o run.
 
 ```java
-public class CountThread extends Thread
+public class CountThread extends Thread { 
     Thread t;
 	int inicio;
 	int fin;
@@ -23,12 +23,13 @@ public class CountThread extends Thread
 		fin = B;
 		t = new Thread(this, "nuevo hilo");
 		t.start();
-        
+	}
+
     @Override
 	public void run() {
 		long starttime = System.nanoTime();
 		for (int contador = inicio;contador<=fin;contador++) {
-			System.out.println("num: "+contador);
+			System.out.println(contador);
 		}
 		long endtime = System.nanoTime();
 		System.out.println("tiempo: "+(starttime-endtime));     
@@ -48,7 +49,8 @@ public class CountThreadsMain{
 }
 ```
 
-En este caso cuando lo ejecuto con run y con start funciona de la misma forma, pero start() es el método que realmente inicia el hilo, permitiendo que el código dentro del método run() se ejecute en paralelo mientras que run() no crea un nuevo contexto de ejecución, simplemente ejecuta el código como una llamada de método normal.
+En este caso cuando lo ejecuto con start los numeros se imprimen de forma desordenada por lo que los hilos trabajan en paralelo, mientras que con run si se imprimen de forma ordenada.
+Esto sucede porque start() es el método que realmente inicia el hilo, permitiendo que el código dentro del método run() se ejecute en paralelo mientras que run() no crea un nuevo contexto de ejecución, simplemente ejecuta el código como una llamada de método normal.
 
 **Parte II - Ejercicio Black List Search**
 

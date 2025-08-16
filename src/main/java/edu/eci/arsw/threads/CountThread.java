@@ -9,7 +9,7 @@ package edu.eci.arsw.threads;
  *
  * @author hcadavid
  */
-public class CountThread extends Thread
+public class CountThread extends Thread{
     Thread t;
 	int inicio;
 	int fin;
@@ -19,12 +19,13 @@ public class CountThread extends Thread
 		fin = B;
 		t = new Thread(this, "nuevo hilo");
 		t.start();
-        
+	}
+
     @Override
 	public void run() {
 		long starttime = System.nanoTime();
 		for (int contador = inicio;contador<=fin;contador++) {
-			System.out.println("num: "+contador);
+			System.out.println(contador);
 		}
 		long endtime = System.nanoTime();
 		System.out.println("tiempo: "+(starttime-endtime));     
