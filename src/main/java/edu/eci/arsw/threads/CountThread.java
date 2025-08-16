@@ -15,4 +15,6 @@ public class CountThread extends Thread{
             System.out.println(i);
         }
     }
+
+    //Falta metodo run porque así como está no funciona bien
 }

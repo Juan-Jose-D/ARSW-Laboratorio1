@@ -3,10 +3,12 @@
 ### Arquitecturas de Software - ARSW
 ## Ejercicio Introducción al paralelismo - Hilos - Caso BlackListSearch
 
+Laboratorio: https://github.com/ARSW-ECI/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH
 
 ### Desarrollo
 
 **Parte I - Introducción a Hilos en Java**
+
 En la clase CountThread extendemos la clase Thread para que funcione como un hilo y creamos la implementación para que imprima los números de un rango dado.
 Y en la clase CountThreadMain creamos los hilos con los rangos del ejercicio y ejecutamos los hilos con start o run.
 
