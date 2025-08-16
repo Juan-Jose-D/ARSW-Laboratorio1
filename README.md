@@ -13,12 +13,26 @@ En la clase CountThread extendemos la clase Thread para que funcione como un hil
 Y en la clase CountThreadMain creamos los hilos con los rangos del ejercicio y ejecutamos los hilos con start o run.
 
 ```java
-public class CountThread extends Thread{
-    public CountThread(int inicio, int fin) {
-        for (int i = inicio; i <= fin; i++) {
-            System.out.println(i);
-        }
-    }
+public class CountThread extends Thread
+    Thread t;
+	int inicio;
+	int fin;
+	
+	public CountThread(int A, int B) {
+		inicio = A;
+		fin = B;
+		t = new Thread(this, "nuevo hilo");
+		t.start();
+        
+    @Override
+	public void run() {
+		long starttime = System.nanoTime();
+		for (int contador = inicio;contador<=fin;contador++) {
+			System.out.println("num: "+contador);
+		}
+		long endtime = System.nanoTime();
+		System.out.println("tiempo: "+(starttime-endtime));     
+	}	
 }
 
 public class CountThreadsMain{
