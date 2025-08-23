@@ -45,8 +45,11 @@ mvn clean compile
 Puedes ejecutar el programa desde la terminal usando:
 
 ```bash
-mvn exec:java -Dexec.mainClass="edu.eci.arsw.blacklistvalidator.Main" -Dexec.args="<ip> <numHilos>"
+mvn exec:java
 ```
+
+Esto ejecutará el ejercicio de la parte 2 del laboratorio.
+Puedes agregarle estos argumentos opcionales:
 
 - `<ip>`: (opcional) Dirección IP a buscar. Por defecto: `200.24.34.55`
 - `<numHilos>`: (opcional) Número de hilos a usar. Por defecto: `4`
@@ -54,8 +57,15 @@ mvn exec:java -Dexec.mainClass="edu.eci.arsw.blacklistvalidator.Main" -Dexec.arg
 Ejemplo:
 
 ```bash
-mvn exec:java -Dexec.mainClass="edu.eci.arsw.blacklistvalidator.Main" -Dexec.args="202.24.34.55 8"
+ mvn exec:java "-Dexec.args=202.24.34.55 8"
 ```
+
+Para ejecutar la parte 1 del laboratorio, usa este comando de java directo en vez de maven:
+
+```bash
+java -cp target\classes edu.eci.arsw.threads.CountThreadsMain
+```
+
 
 ### 4. Monitorear el desempeño (opcional)
 

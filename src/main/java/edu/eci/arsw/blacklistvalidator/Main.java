@@ -28,7 +28,6 @@ public class Main {
             }
         }
         int cores = Runtime.getRuntime().availableProcessors();
-        System.out.println("Número de núcleos disponibles: " + cores);
         long start = System.currentTimeMillis();
         List<Integer> blackListOcurrences = hblv.checkHost(ip, nThreads);
         long end = System.currentTimeMillis();
